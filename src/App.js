@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import NamePage from "./components/namePage";
+import SelectWheeler from "./components/wheeler";
+import BikeTypes from "./components/bikeTypes";
+import CarTypes from "./components/carTypes";
+// import VehicleList from "./components/vehicleList";
+import DateRange from "./components/dateRange";
+
+
+const App = () => {
+    return (
+        <>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<NamePage />} />
+                    <Route path="/wheels" element={<SelectWheeler/>} />
+                    <Route path="/bike_types" element={<BikeTypes/>} />
+                    <Route path="/car_types" element={<CarTypes/>} />
+                    {/* <Route path="/vehicle_list" element={<VehicleList/>} /> */}
+                    <Route path="/date" element={<DateRange/>} />
+                    <Route path="*" element={<div>Error Page Not found</div>}/>
+                </Routes>
+            </BrowserRouter>
+        </>
+    )
 }
+
 
 export default App;
