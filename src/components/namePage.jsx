@@ -1,6 +1,6 @@
 import { useState } from "react"
 import "../styles/namePage.css"
-
+import {Link} from "react-router-dom"
 
 const NamePage = () => {
     const [fname, setFname] = useState("")
@@ -13,7 +13,7 @@ const NamePage = () => {
         const formData = new FormData()
         formData.append("first_namef", fname)
         formData.append("last_namef", lname)
-        fetch("http://localhost:8080/name_data", {
+        fetch("https://vehicle-renting-form.onrender.com/name_data", {
             method: "POST",
             body: formData
         }).then((res) => {
@@ -24,7 +24,6 @@ const NamePage = () => {
                 localStorage.setItem("mongoid", data.user._id)
                 window.location="/wheels"
             }
-
         })
     }
     return (
@@ -39,6 +38,7 @@ const NamePage = () => {
                     <button disabled={!(fname && lname)} className="first-btn"  >Next</button>
                 </form >
             </div>
+            <Link  to="/wheels"> new linkbb cncfgnnghn</Link>
         </>
     )
 }

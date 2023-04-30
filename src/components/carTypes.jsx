@@ -9,7 +9,7 @@ const CarTypes = () => {
     const [c_model, setC_model] = useState()
     const mongoId = localStorage.getItem("mongoid")
     useEffect(() => {
-        fetch("http://localhost:8080/types")
+        fetch("https://vehicle-renting-form.onrender.com/types")
             .then((res) => {
                 return res.json()
             }).then((data) => {
@@ -20,7 +20,7 @@ const CarTypes = () => {
         const formData = new FormData()
         formData.append("car_type", val)
         formData.append("mongoId", mongoId)
-        fetch("http://localhost:8080/car_types", {
+        fetch("https://vehicle-renting-form.onrender.com/car_types", {
             method: "POST",
             body: formData
         }).then((res) => {
@@ -37,7 +37,7 @@ const CarTypes = () => {
         const formData = new FormData()
         formData.append("vehicle_name", val1)
         formData.append("mongoId", mongoId)
-        await fetch("http://localhost:8080/vehicle_model", {
+        await fetch("https://vehicle-renting-form.onrender.com/vehicle_model", {
             method: "POST",
             body: formData
         }).then((res) => {

@@ -17,7 +17,6 @@ const App = () => {
                     <Route path="/wheels" element={<SelectWheeler/>} />
                     <Route path="/bike_types" element={<BikeTypes/>} />
                     <Route path="/car_types" element={<CarTypes/>} />
-                    {/* <Route path="/vehicle_list" element={<VehicleList/>} /> */}
                     <Route path="/date" element={<DateRange/>} />
                     <Route path="*" element={<div>Error Page Not found</div>}/>
                 </Routes>

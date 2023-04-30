@@ -29,7 +29,7 @@ const DateRange = () => {
         const formData = new FormData()
         formData.append("date_rangef", `${start_Date} to ${end_Date}`)
         formData.append("mongoId", mongoId)
-        await fetch("http://localhost:8080/date", {
+        await fetch("https://vehicle-renting-form.onrender.com/date", {
             method: "POST",
             body: formData
         }).then((res) => {

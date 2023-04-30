@@ -10,7 +10,7 @@ const SelectWheeler= ()=>{
         const formData = new FormData()
         formData.append("wheel_no", val )
         formData.append("mongoId", mongoId )
-        await fetch("http://localhost:8080/wheels_no",{
+        await fetch("https://vehicle-renting-form.onrender.com/wheels_no",{
             method:"POST",
             body:formData
         }).then((res)=>{
