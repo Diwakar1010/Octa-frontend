@@ -18,7 +18,7 @@ const App = () => {
                     <Route path="/bike_types" element={<BikeTypes/>} />
                     <Route path="/car_types" element={<CarTypes/>} />
                     <Route path="/date" element={<DateRange/>} />
-                    <Route path="*" element={<div>Error Page Not found</div>}/>
+                    {/* <Route path="*" element={<div>Error Page Not found</div>}/> */}
                 </Routes>
             </BrowserRouter>
         </>
