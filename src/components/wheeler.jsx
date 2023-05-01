@@ -1,8 +1,10 @@
 
 import { useState } from "react"
 import "../styles/wheeler.css"
+import { useNavigate } from "react-router-dom"
 
 const SelectWheeler= ()=>{
+    const his = useNavigate()
     const [val, setVal] = useState("")
     const mongoId = localStorage.getItem("mongoid")
     const handlebtn = async (e)=>{
@@ -18,10 +20,10 @@ const SelectWheeler= ()=>{
         }).then((data)=>{
             console.log(data)
             if(data.status === "success" && data.user.wheeler ==="2-wheeler"){
-                window.location="/bike_types"
+                his("/bike_types")
             }
             if(data.status === "success" && data.user.wheeler ==="4-wheeler"){
-                window.location="/car_types"
+                his("/car_types")
             }
         })
     }

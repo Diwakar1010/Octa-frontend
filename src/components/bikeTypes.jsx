@@ -1,8 +1,10 @@
 
 import { useEffect, useState } from "react"
 import "../styles/wheeler.css"
+import { useNavigate } from "react-router-dom"
 
 const BikeTypes = () => {
+    const his = useNavigate()
     const [val, setVal] = useState("")
     const [val1, setVal1] = useState("")
     const [bikeArr, setBikeArr] = useState([])
@@ -46,7 +48,7 @@ const BikeTypes = () => {
         }).then((data) => {
             // console.log(data)
             if (data.status === "success") {
-                window.location = "/date"
+                his("/date")
             }
         })
     }

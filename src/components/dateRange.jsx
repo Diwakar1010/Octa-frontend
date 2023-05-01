@@ -5,9 +5,11 @@ import Swal from 'sweetalert2'
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import "../styles/datRange.css"
+import { useNavigate } from 'react-router-dom';
 
 
 const DateRange = () => {
+    const his = useNavigate()
     const [start_Date, setStartDate] = useState(new Date())
     const [end_Date, setEndDate] = useState(new Date())
     const[btn ,setBtn] = useState(true)
@@ -44,7 +46,7 @@ const DateRange = () => {
                     confirmButtonText: 'Cool'
                   }).then(()=>{
                     localStorage.removeItem("mongoid")
-                    window.location = "/"
+                    his("/")
                   })
             }
         })
